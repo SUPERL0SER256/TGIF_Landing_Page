@@ -1,0 +1,313 @@
+:root {
+    --color-bg: #ffffff;
+    --color-text: #111111;
+    --color-accent: #26a69a; /* Lighter Teal */
+    --color-dark: #7160b8;
+    --font-main: 'Inter', sans-serif;
+    --spacing: 4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-main);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* Swiss Punk Grid Overlay / Noise */
+.noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Utilities */
+.text-accent { color: var(--color-accent); }
+.text-white { color: #000000; }
+.bg-dark { background: linear-gradient(135deg, #e9e6e6 0%, #dbd5d5 100%); }
+.bg-grey { background-color: #d4d4d4; }
+.bg-white { background-color: #ffffff; color: var(--color-text); }
+.bg-accent { background: linear-gradient(135deg, #00796b 0%, #26a69a 100%); }
+.text-center { text-align: center; }
+.mt-4 { margin-top: 4rem; }
+
+/* Sections */
+.section {
+    padding: var(--spacing) 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Typography */
+.huge-title {
+    font-size: clamp(4rem, 12vw, 15rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+}
+
+.section-title {
+    font-size: clamp(3rem, 6vw, 8rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.vision .section-title {
+    font-size: clamp(4rem, 8vw, 10rem);
+}
+
+.lead {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+}
+
+p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    background: var(--color-accent);
+    color: white;
+    padding: 1rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Lists */
+.punk-list {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.punk-list li {
+    font-size: 1.5rem;
+    padding-left: 2rem;
+    position: relative;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.punk-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    background: var(--color-accent);
+}
+
+.program .punk-list li {
+    font-size: 1.25rem;
+}
+
+/* Specific Sections */
+.hero {
+    position: relative;
+}
+
+.hero-sub {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-sub p {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.divider {
+    flex-grow: 1;
+    height: 4px;
+    background-color: var(--color-text);
+}
+
+.team-grid, .board-grid, .funders-grid, .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    padding: 2rem;
+    background: rgb(255, 255, 255);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translate(-10px, -10px);
+    box-shadow: 10px 10px 0 var(--color-accent);
+}
+
+.card-dark {
+    padding: 2rem;
+    background: linear-gradient(135deg, #004d40 0%, #00796b 100%);
+    color: white;
+}
+
+.board-member {
+    text-align: center;
+}
+
+.board-member .image-wrapper {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    background-color: #ccc;
+}
+
+.punk-btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--color-text);
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    transition: all 0.2s;
+}
+
+.punk-btn:hover {
+    background: var(--color-accent);
+}
+
+.funder {
+    text-align: center;
+    padding: 2rem;
+    border: 2px dashed var(--color-text);
+}
+
+.tag {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Placeholders */
+.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #d4d4d4;
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border: 4px dashed var(--color-text);
+}
+.funder-logo.placeholder {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    filter: grayscale(100%);
+}
+
+.funder-name, .program-title {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+    text-transform: uppercase;
+}
+
+.program-title {
+    font-size: 2.5rem;
+}
+
+.tag {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Contact Footer */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-item h4 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    color: var(--color-text); /* card-dark makes bg dark, but wait, bg-accent is wrapper */
+}
+.bg-accent .contact-item h4 {
+    color: white;
+}
