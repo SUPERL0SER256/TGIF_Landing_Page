@@ -322,3 +322,12 @@ p {
 .bg-accent .contact-item h4 {
     color: white;
 }
+
+.credits {
+    margin-top: 6rem;
+}
+.credits p {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-bottom: 0;
+}
