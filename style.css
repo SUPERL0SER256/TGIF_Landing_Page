@@ -36,6 +36,7 @@ body {
 
 /* Utilities */
 .text-accent { color: var(--color-accent); }
+.text-red { color: #e53935; }
 .text-white { color: #000000; }
 .bg-dark { background: linear-gradient(135deg, #e9e6e6 0%, #dbd5d5 100%); }
 .bg-grey { background-color: #d4d4d4; }
@@ -191,6 +192,10 @@ p {
 
 .board-member {
     text-align: left;
+}
+
+.board-member .image-wrapper {
+    width: 65%;
 }
 
 .image-wrapper {
