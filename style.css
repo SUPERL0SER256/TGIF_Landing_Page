@@ -164,10 +164,20 @@ p {
     background-color: var(--color-text);
 }
 
-.team-grid, .board-grid, .funders-grid, .programs-grid {
+.board-grid, .funders-grid, .programs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 450px));
+    justify-content: center;
+    gap: 9rem;
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
@@ -194,12 +204,8 @@ p {
     text-align: left;
 }
 
-.board-member .image-wrapper {
-    width: 65%;
-}
-
 .image-wrapper {
-    width: 100%;
+    width: 65%;
     aspect-ratio: 1;
     overflow: hidden;
     margin-bottom: 1.5rem;
